@@ -99,9 +99,9 @@ class GoogleMapDownloader:
 
 def main():
     # Create a new instance of GoogleMap Downloader
-    x = 40.301843
-    y = -7.7487259
-    zoom =16
+    x = 38.4955676
+    y = -8.9941443
+    zoom =15
     gmd = GoogleMapDownloader(x,y,zoom)
     xtile, ytile = gmd.getXY()
     sWx = xtile * 256/math.pow(2, zoom)
@@ -119,7 +119,7 @@ def main():
         print("Could not generate the image - try adjusting the zoom level and checking your coordinates")
     else:
         #Save the image to disk
-        img.save("img3.png")
+        img.save("img5.png")
         print("The map has successfully been created")
         
 

@@ -38,7 +38,7 @@ def filterImg(frame):
 # cv2.destroyAllWindows()
 def main():
     cap = cv2.VideoCapture('./video/cuttedclip.mp4')
-    img = cv2.imread('./img.png')
+    img = cv2.imread('./img4.png')
     while(cap.isOpened()):
         imgconverted = filterImg(img)
         _, frame = cap.read()
@@ -60,7 +60,7 @@ def main():
         cv2.drawContours(frame, contours, -1, (74,195,139), 2)
         cv2.drawContours(frame, contours2, -1, (0, 255, 255), 6)
         cv2.drawContours(frame, contours3, -1, (0, 0, 255), 2)
-        cv2.imwrite('./img1converted.png', imgconverted) 
+        cv2.imwrite('./img4converted.png', imgconverted) 
         cv2.imshow('result', frame)
         if (cv2.waitKey(1) & 0xFF == ord('q')):
             break

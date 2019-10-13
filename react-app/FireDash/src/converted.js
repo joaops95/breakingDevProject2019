@@ -1,13 +1,46 @@
 
 import React, {Component} from 'react';
 import {Text, View, TouchableOpacity, Image} from 'react-native';
-import heatedmap from './images/img3converted.png'
 
+import heatedmapse from './images/img1converted.png'
+import heatedmapsa from './images/img2converted.png'
+import heatedmapsc from './images/img3converted.png'
 class ConvertedScreen extends Component{
-
+  renderSwitch(param) {
+    switch(param) {
+      case 'se':
+        return (
+          <Image
+          source={heatedmapse}
+          style={{width:290, height:400, paddingBottom: 20}}
+          />
+        )
+      case 'sa':
+        return (
+          <Image
+          source={heatedmapsa}
+          style={{width:290, height:400, paddingBottom: 20}}
+          />
+        )
+        case 'sc':
+          return (
+            <Image
+            source={heatedmapsc}
+            style={{width:290, height:400, paddingBottom: 20}}
+            />
+        )
+      default:
+        return (
+          <Image
+          source={heatedmapse}
+          style={{width:290, height:400, paddingBottom: 20}}
+          />
+        )
+    }
+  }
   render(){
-    const serra = this.props.navigation.getParam('location');
-
+    const location = this.props.navigation.getParam('location');
+    
     return(
       <View style={{
         flex:1,
@@ -16,13 +49,10 @@ class ConvertedScreen extends Component{
         backgroundColor:'white'
       }}>
         <Text
-        style={{fontSize:30, paddingBottom:10}}>
+        style={{fontSize:22, paddingBottom:10}}>
             Mapa das zonas mais secas
         </Text>
-            <Image
-            source={heatedmap}
-            style={{width:290, height:400, paddingBottom: 20}}
-            />
+        {this.renderSwitch(location)}
         <Text style = {{paddingBottom:10}}></Text>
         <TouchableOpacity
         style = {{backgroundColor: '#f4511e', height: 50, width: 200, borderRadius:10, paddingTop:10}}
